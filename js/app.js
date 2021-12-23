@@ -15,3 +15,15 @@ notes.forEach((element) => {
   stickNote.classList.add("note-example");
   pizarra.appendChild(stickNote);
 });
+
+// Capturo el textarea y la nota de ejemplo
+const noteContent = document.querySelector("#note-text");
+const exampleNote = document.querySelector("#note-ejemplo");
+
+noteContent.addEventListener("keyup", (e) => {
+  if (e.target.value === "") {
+    exampleNote.innerText = "Escriba una nota";
+  } else {
+    exampleNote.innerText = e.target.value;
+  }
+});
